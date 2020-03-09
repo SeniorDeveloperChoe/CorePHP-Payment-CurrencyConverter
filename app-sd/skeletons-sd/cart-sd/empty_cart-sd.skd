@@ -1,0 +1,25 @@
+<section id="content" class="user-dashboard">
+    <div class="user-dashboard-main">
+        <div class="container-fluid">
+            <!--mobile view-->
+            
+            <!--mobile view-->
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <div class="main-content usr-profile">
+                        <div id="supProfile">
+                            <h5 class="main-heading">
+                                 {MY_CART} 
+                            </h5>
+                            <div class="no-msg">
+                             <img src="{SITE_IMG}icons/empty-cart.png" alt="">
+                             <h2>{OPPS}</h2>
+                             <p>{YOUR_CART_IS_EMPTY}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

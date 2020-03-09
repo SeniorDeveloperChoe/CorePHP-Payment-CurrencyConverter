@@ -1,0 +1,627 @@
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="start-order">
+                    <div class="main-content">
+                        <h2>{START_ORDER}</h2>
+                        <div class="supplier-details">
+                            <p class="sup-name">
+                                <span>{SUPPLIER}</span> %USERNAME%, %COMPANY_NAME%
+                            </p>
+                            <span class="sup-detail"><a href="#" class="show-this">{SHOW_SUPPLIER_DETAILS} <i class="fa fa-angle-down"></i></a></span>
+                            <div class="supplier-name">
+                                <p>
+                                    <label>{COMPANY_NAME} :</label>
+                                    <span>%COMPANY_NAME%</span>
+                                </p>
+                                <p>
+                                    <label>{CONTACT_NAME} :</label>
+                                    <span>%CONTACT_PERSON_NAME%</span>
+                                </p>
+                                <p>
+                                    <label>{COUNTRY_REGION} :</label>
+                                    <span>%LOCATION%</span>
+                                </p>
+                                <p>
+                                    <label>{CONTACT_NUMBER} :</label>
+                                    <span>%CONTACT_NO_1%</span>
+                                </p>
+                                <p>
+                                    <label>{LBL_PAYMENT_METHOD} :</label>
+                                    <span>%PAYMENT_METHODS_SELECTED%</span>
+                                </p>
+                                <span class="sup-detail hide-this"><a href="#">{HIDE_SUPPLIER_DETAILS} <i class="fa fa-angle-up"></i></a></span>
+                            </div>
+                        </div>
+                      <form class="form-horizontal" method="post" name="Place_order" id="Place_order">
+                        <div class="product-box">
+                            <h4>{PRODUCT}</h4>
+                            <ul class="product-list clearfix">
+                                <li class="pro-name">
+                                    {PRODUCT_NAME}
+                                </li>
+                                <li class="quantity">
+                                    <span class="text-danger">*</span> {QUANTITY}
+                                </li>
+                                <li class="offer">
+                                    <span class="text-danger">*</span> {YOUR_OFFER}
+                                </li>
+                                <li class="offer">
+                                     <span class="text-danger"></span> {TOTAL}
+                                </li>
+                            </ul>
+                            <ul class="listing-item clearfix">
+                                <li class="pro-name">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            <div class="pro-img">
+                                                <img src="%IMAGE_BUYING_REQ%" alt="%PRODUCT_TITLE%" title="%PRODUCT_TITLE%">
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <span>
+                                                <a href="{SITE_URL}product-detail/%SLUG%" target="">%PRODUCT_TITLE%</a>
+                                            </span>
+                                            <span class="price">%SHOW_PRODUCT_DEFAULT_PRICE% / %UNIT_ID%</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="quantity">
+                                <div class="form-group">
+                                    <input type="number" min="%MIN_ORDER_QUANTITY%" class="ds_quantity" name="quantity" id="quantity" placeholder="{QUANTITY}" value="%MIN_ORDER_QUANTITY%"> %UNIT_ID%
+                                    <p>{PRODUCT_STOCK_IS} %PRODUCT_STOCK%.
+                                </div>
+                                </li>
+                                <li class="offer">
+                                <div class="form-group">
+                                    %PRODUCT_PRICE_HTML%
+                                </div>
+                                </li>
+                                <li class="offer">
+                                <div class="form-group">
+                                      <input type="text" value="%PRODUCT_SUB_TOTAL_AMOUNT%" name="total_amount" id="total_amount" placeholder="{TOTAL}" readonly="readonly">
+                                </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="responsive-orders">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="p-name">{PRODUCT_NAME}</th>
+                                            <th class="q-name">{QUANTITY}</th>
+                                            <th class="o-name">{YOUR_OFFER_PER_UNIT_PRICE}</th>
+                                             <th class="o-name">{TOTAL}</th>
+                                            <th class="r-name">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="pro-name p-name">
+                                                <div class="media">
+                                                    <div class="pull-left">
+                                                        <div class="pro-img">
+                                                            <img src="%IMAGE_BUYING_REQ%" alt="%PRODUCT_TITLE%" title="%PRODUCT_TITLE%">
+                                                        </div>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <span>
+                                                            <a href="{SITE_URL}product-detail/%SLUG%" target="">%PRODUCT_TITLE%</a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="q-name">
+                                            <div class="form-group">
+                                                <input type="text" name="quantity" min="%MIN_ORDER_QUANTITY%" id="quantity" value="%MIN_ORDER_QUANTITY%" placeholder="{QUANTITY}"> %UNIT_ID%
+                                                <p>{PRODUCT_STOCK_IS} %PRODUCT_STOCK%.
+                                            </div>
+                                            </td>
+                                            <td class="o-name">
+                                            <div class="form-group">
+                                                 %PRODUCT_PRICE_HTML%
+                                            </div>
+                                            </td>
+                                             <td class="o-name">
+                                            <div class="form-group">
+                                                <input type="text" name="total_amount" id="total_amount" placeholder="{TOTAL}" readonly="readonly">
+                                            </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                         <div class="row">
+                                 <div class="col-md-8 col-sm-7">
+                                     <div class="other-info">
+                                         <h4>{OTHER_REQUIREMENTS}</h4>
+                                         <form class="form-horizontal" action="#" method="post">
+                                             <div class="form-group">
+                                              <label class="control-label col-sm-3" for="desc">{DESCRIPTION}*</label>
+                                              <div class="col-sm-9">
+                                               <textarea class="form-control" rows="3" id="description" name="description" placeholder="{DESC_PLACEHOLDET}"></textarea>
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-sm-3">{SELECT_COUNTRY}*</label>
+                                              <div class="col-sm-9">                         
+                                                   %ALL_COUNTRIES%
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-sm-3">{SHIPPING_METHOD}*</label>
+                                              <div class="col-sm-9">                              
+                                               %SHIPPING_METHODS%
+                                            <!--   </select> -->
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-sm-3">{SHIPPING_CHARGE}</label>
+                                              <div class="col-sm-9">
+                                                <input type="text" name="shipping_charge" id="shipping_charge" value="%SHIPPING_AMOUNT%" class="form-control" readonly>
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class=" col-sm-offset-3 col-sm-3" id="shipping_days"></label>
+                                            </div>
+
+                                         </form>
+                                     </div>
+                                   </div>
+                                   <div class="col-md-4 col-sm-5">
+                                      <!-- [20-03-03 by Ming Lau...] choose tab USD and NDN -->
+                                      <div class="pay_tab">
+                                        <select class="selectpicker corrency_list" data-size="5">
+                                          <option title="Choose your currency" disabled>Choose your currency</option>
+                                          <option title="NGN" selected>NGN, Naigeria</option>
+                                          <option title="USD">USD, United States</option>
+                                          <option title="EUR">EUR, Europe</option>
+                                          <option title="CAD">CAD, Canada</option>
+                                          <option title="GBP">GBP, United Kingdom</option>
+                                          <option title="JPY">JPY, Japan</option>
+                                          <option title="HKD">HKD, HongKong</option>
+                                          <option title="ILS">ILS, Israeli</option>
+                                          <option title="RUB">RUB, Russia</option>
+                                          <option title="SGD">SGD, Singapore</option>
+                                        </select>
+                                      </div>
+                                      <!-- end drop_down_list -->
+                                       <div class="other-info">
+                                           <h4>{PRICE_DETAILS}</h4>
+                                           <p><label>{SUB_TOTAL}</label><span id="sub_total_amount">%PRODUCT_SUB_TOTAL_AMOUNT% {CURRENCY_CODE}</span></p>
+                                           <p><label>{DELIVERY_CHARGES}</label><span id="shipping_charge_amount">%SHIPPING_AMOUNT% {CURRENCY_CODE}</span></p>
+                                           <hr>
+                                           <p class="payable"><label>{AMOUNT_PAYABLE}</label><span id="total_payable_amount">%TOTAL_PAYABLE_AMOUNT% {CURRENCY_CODE}</span></p>
+                                           <input type="hidden" value="%TOTAL_PAYABLE_AMOUNT%" value="" name="total_payable_final_amount" id="total_payable_final_amount">
+                                       </div>
+                                   </div>
+                               </div>
+                        </form>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 text-right">
+                                %PURCHASE_BUTTON%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- start start order modal -->
+    <div id="pay_buyNow" class="modal fade start-order-modal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">{BUY_NOW}</h4>
+          </div>
+          <div class="modal-body payText">
+            <p>{CHECKOUT_CONFIRMATION}</p>
+            <p>{TOTAL_WALLET_AMOUNT}: <span class="theme-color" id="display_wallet_amount"></span></p>
+            <div class="buttons">
+              <button class="btn btn-system payUsingPaypal">Pay with Paypal</button>
+              <button class="btn btn-system payUsingPaypal payUsingPaystack">Pay with Paystack</button>
+              <button class="btn btn-system payUsingCOD">Cash on Delivery</button>
+              <button class="btn btn-system payUsingWallet">{PAY_USING_WALLET}</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">{LBL_CLOSE}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- end start order modal -->
+
+<!-- confirm start order modal -->
+    <div id="start_order_place" class="modal fade start-order-place" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">{START_ORDER}</h4>
+          </div>
+          <div class="modal-body payText">
+            <p></p>
+            <div class="buttons">
+              <button class="btn btn-system place_order">{PLACE_ORDER}</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">{LBL_CLOSE}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- end confirm start order modal -->
+<script type="text/javascript">
+   $(document).ready(function() {
+        let url = window.location.href;
+        if(url.includes('?')){
+            $.urlParam = function(name){
+                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                return results[1] || 0;
+            }
+            var order_id = $.urlParam("order_id");
+            var trxref = $.urlParam("trxref");
+            var reference = $.urlParam("reference");
+            if (order_id != null && order_id != '' && trxref != null && trxref !== '' && reference!= null && reference !== '') {
+                addOverlay();
+                $.post('{SITE_URL}ajax-product-start-order', 
+                    {
+                        action: 'payment_verification',
+                        order_id,
+                        trxref,
+                        reference
+                    },
+                    function(data){
+                        console.log(data);
+                        removeOverlay();                      
+                        if(data && data.status == "success"){
+                            window.location.href = "{SITE_URL}buyer-manage-order";
+                        } else {
+                            $("#pay_buyNow").modal('toggle');
+                            toastr["error"]("PAYMENT DECLINED");
+                        }
+                    }, 'json');
+            }
+        }
+        $(".country_id").select2({placeholder: "---{SELECT_COUNTRY}---"});
+       
+            $(document).on('keyup input',"#your_offer",function(){
+              var your_offer = $(this).val();
+              if($(".ds_your_offer").val()==""){
+                $(".ds_your_offer").val(your_offer);
+              }
+              var quantity = $(this).parent().parent().prev().find('#quantity').val();
+              var total = your_offer * quantity; 
+              
+              var total_shipping_amount = $("#shipping_charge").val();            
+              var total_payable = parseFloat(total)+parseFloat(total_shipping_amount);
+              var total_payable = total_payable.toFixed(1);
+              $(this).parent().parent().next().find('#total_amount').val(total);
+              $("#sub_total_amount").text(total+" {CURRENCY_CODE}");
+              $("#total_payable_amount").text(total_payable+" {CURRENCY_CODE}"); 
+              $("#total_payable_final_amount").val(total_payable); 
+          });
+          var _quantity="%MIN_ORDER_QUANTITY%";
+          $(document).on('keyup input',"#quantity",function(){
+              var quantity = $(this).val();
+              _quantity = $(this).val();
+              $(".country_id").val(null).trigger('change.select2');
+              $('.shipping_method').prop('selectedIndex',0);
+              if($(".ds_quantity").val()==""){
+                $(".ds_quantity").val(your_offer);
+              }
+              var your_offer = $(this).parent().parent().next().find('#your_offer').val();
+              var total = your_offer * quantity; 
+              
+              // [20-03-03 by Ming Lau...] change currency_rate when increasing count
+              // var total_shipping_amount = $("#shipping_charge").val();            
+              // var total_payable = parseFloat(total)+parseFloat(total_shipping_amount);
+              // var total_payable = total_payable.toFixed(1);
+              $(this).parent().parent().next().next().find('#total_amount').val(total);
+              // $("#sub_total_amount").text(total+" {CURRENCY_CODE}");
+              // $("#total_payable_amount").text(total_payable+" {CURRENCY_CODE}"); 
+              // $("#total_payable_final_amount").val(total_payable);
+              change_currecy(); 
+          });
+        
+            
+          $(document).on('click', '.place_order, .start_order_buying_req, .buy_now, .payUsingPaypal, payUsingPaystack, .payUsingWallet, .payUsingCOD', function(e) {   
+                 e.preventDefault();
+                // alert('buynow_choe');
+                $frmmerRegi = "#Place_order"; {  
+                $($frmmerRegi).validate({
+                   ignore: [],
+                   errorClass: 'help-block',
+                   errorElement: 'span',
+                   highlight: function(element) {
+                       $(element).parent('.form-group').addClass('has-error');
+                   },
+                   unhighlight: function(element) {
+                       $(element).parent('.form-group').removeClass('has-error');
+                   },  
+                   errorPlacement: function(error, element) {
+                       if (element.attr("data-error-container")) {
+                          error.appendTo(element.attr("data-error-container"));
+                       } else {  
+                          error.insertAfter(element);                            
+                       }
+                   },
+                 rules:
+                  {   quantity: {required: true, min: "%MIN_ORDER_QUANTITY%"},
+                      your_offer: {required: true,digits:true},
+                      description: { required: true },
+                      total_amount: { required: true },
+                      country_id: { required: true },
+                      shipping_method: { required: true }
+                  },
+                  messages:
+                  {   quantity: { required: "{PLEASE_ENTER_QUANTITY}", min:"{PLEASE_ENTER_MORE_THAN_MINIMUM_ORDER_QUANTITY}"},
+                      your_offer: { required: "{PLEASE_ENTER_YOUR_OFFER_AMOUNT}",digits:"{PLEASE_ENTER_ONLY_DIGITS}"},
+                      description: { required: "{PLEASE_ENTER_DESCRIPTION}"},
+                      total_amount: { required: "{PLEASE_ENTER_TOTAL_AMOUNT}"},
+                      country_id: { required: "{PLEASE_SELECT_COUNTRY}"},
+                      shipping_method: { required: "{PLEASE_ENTER_SHIPPING_METHOD}"}
+                  },  
+                  errorPlacement: function(error, element) {
+                      if (element.attr("data-error-container")) {
+                          error.appendTo(element.attr("data-error-container"));
+                      } else {
+                          if(element.attr('class')=="form-control country_id select2-hidden-accessible"){
+                              error.insertAfter(".skill-language");                                
+                          }else{
+                              error.insertAfter(element);                                
+                          }
+                      }
+                  }
+               });
+            }
+            var chk_shipping=0;
+              if($("#Place_order").valid()){
+                addOverlay();
+                if($(this).hasClass("buy_now") && parseInt($("#total_payable_final_amount").val())>"{BUY_NOW_ORDER_LIMIT}"){
+                  removeOverlay();
+                  toastr["error"]("Currently, only limited stock is available");
+                  return false;
+                }
+                
+                if($(this).hasClass("start_order_buying_req") && parseInt($("#total_payable_final_amount").val())>"{START_ORDER_LIMIT}"){
+                    removeOverlay();
+                    $("#start_order_place").modal('toggle');
+                    return false;
+                }                
+                $.ajax({
+                    url: "{SITE_URL}ajax-product-start-order",
+                    type: "POST",
+                    dataType: "json",
+                    async: false,
+                    data: {
+                        pid: "%PID%",
+                        action: 'chk-shipping'
+                    },
+                    success: function(data) {
+                        console.log(data);
+                      if(data.response==""){
+                        removeOverlay();
+                        chk_shipping=1;
+                      }
+                    }
+              });
+                if(chk_shipping!=1){
+                 // TODO buynow form part by Ming Lau
+                  var url=new URLSearchParams(location.search);  
+                  var chk_ref = url.get('ref');
+                  var quantity = $("#quantity").val();
+                  var your_offer = $("#your_offer").val();
+                  var description = $("#description").val();
+                  var total_payable_final_amount = $("#total_payable_final_amount").val();
+                  var country_id = $(".country_id").val();
+                  var shipping_method = $(".shipping_method").val();
+                  var buying_req_id = "%PID%";
+                  var buy_now="";
+                  if($(this).hasClass("buy_now")){                  
+                    $.ajax({
+                      url: "{SITE_URL}ajax-product-start-order",
+                      type: "POST",
+                      dataType: "json",
+                      data: {
+                          amount: total_payable_final_amount,
+                          action: 'chk-user-wallet'
+                      },
+                      success: function(data) {
+                        removeOverlay();
+                        if(data.need_to_pay==""){
+                          $(".payUsingPaypal").remove();
+                          $(".payUsingPaystack").remove();
+                          var wallet_amount_text = $("#total_payable_amount").text();
+
+                          $(".payUsingWallet").text("{PAY_USING_WALLET} ("+wallet_amount_text +")");
+                        }else if(data.need_to_pay!=""){
+                          total_payable_final_amount=data.need_to_pay;
+                          $(".payUsingWallet").remove();
+                        } 
+                          $("#display_wallet_amount").text(data.wallet_amount + " {CURRENCY_CODE}");
+
+                          $("#pay_buyNow").modal('toggle');
+                      }
+                    });
+                  }
+                  if($(this).hasClass("payUsingPaypal")){
+                    buy_now="paypal";
+                  }
+                  if($(this).hasClass("payUsingPaystack")){
+                    buy_now="paystack";
+                  }
+                  if($(this).hasClass("payUsingWallet")){
+                    buy_now="wallet";
+                  }
+                  if($(this).hasClass("payUsingCOD")){
+                    buy_now="cod";
+                  }
+                    if($(this).hasClass("payUsingPaypal") || $(this).hasClass("payUsingPaystack") || $(this).hasClass("payUsingCOD") || $(this).hasClass("payUsingWallet") || $(this).hasClass("start_order_buying_req") || $(this).hasClass("place_order")){
+                      $.post('{SITE_URL}ajax-product-start-order', 
+                      {
+                          action: 'start_order',
+                          quantity: quantity,
+                          your_offer: your_offer,
+                          description: description,
+                          shipping_method: shipping_method,
+                          country_id: country_id,
+                          buying_req_id: buying_req_id,
+                          total_payable_final_amount: total_payable_final_amount,
+                          supplier_id: "%SUPPLIER_ID%",
+                          buyer_id: "%BUYER_ID%",
+                          buyNow:buy_now,
+                          ref:chk_ref, 
+                          selected_currency: selected_currency,
+                          selected_currency_rate: selected_currency_rate
+                      }, function(data){
+                        removeOverlay();          
+                        console.log(data);            
+                        // if(data && data.pay == "paystack"){
+                        //     window.location.href = "{SITE_URL}pay-now-order/"+data.payment_id+'?ref='+chk_ref;
+                        // }else 
+                        if(data && data.start_order == "yes") {
+                            window.location.href = "{SITE_URL}buyer-manage-order";
+                        }else if(data && data.pay == "paypal") {
+                            window.location.href = data.pay_url;
+                        }else if(data && data.pay == "paystack") {
+                            window.location.href = data.pay_url;
+                        }else if(data && data.insufficient == "yes") {
+                            $("#pay_buyNow").modal('toggle');
+                            toastr["error"]("{YOU_HAVE_INSUFFICIENT_BALANCE_IN_YOUR_WALLET}");
+                        }
+                      }, 'json');
+                    }
+                  }else{
+                    toastr["error"]("{CAN_NOT_PLACE_AN_ORDER}");
+                  }
+                }else{
+                  if(chk_shipping==1){
+                    toastr["error"]("{CAN_NOT_PLACE_AN_ORDER}");
+                  }else{
+                    toastr["error"]("{ERR_ALL_REQ}");
+                  }
+                }
+            });
+
+            var country_id=0;
+            var selected_currency = "NGN";
+            var selected_currency_rate = 1;
+            $(document).on('change', '.country_id', function(e) {   
+                 e.preventDefault();              
+                country_id = $(this).val();                
+                $.post('{SITE_URL}ajax-product-start-order', 
+                {
+                    action: 'change_country_get_shipping_type',
+                    country_id:country_id,
+                    quantity:_quantity,
+                    product_id:"%PID%"
+                }, function(data) {
+                    if (data && data.code == "200") {
+                        $("#shipping_method").html(data.option);
+                    }
+                }, 'json');
+            });
+            
+            // ming lau - change shipping method
+            var selected_shipping_amount = 0;
+             $(document).on('change', '.shipping_method', function(e) {   
+                 e.preventDefault();              
+                var shipping_method = $(this).val();
+                if(shipping_method == "---Select Shipping Methods---") {
+                  $("#shipping_charge").val(0);
+                }
+                else {
+                  $.post('{SITE_URL}ajax-product-start-order', 
+                  {
+                      action: 'change_shipping_type_get_price',
+                      country_id:country_id,
+                      shipping_method:shipping_method,
+                      quantity:_quantity,
+                      product_id:"%PID%"
+                  }, function(data) {
+                      if (data && data.code == "200") {
+                          // Ming Lau...
+                          var changed_amount = round(data.amount * selected_currency_rate, 2);
+
+                          $("#shipping_charge").val(data.amount);
+                          $("#shipping_charge_amount").val(changed_amount);
+                          $("#shipping_days").text(data.shipping_days_text);
+
+                          change_currecy();
+
+                          //var your_offer = $("#your_offer").val();
+                          //var quantity = $("#quantity").val();
+                          //var total = your_offer * quantity;
+                          //var total_shipping_amount = $("#shipping_charge").val();            
+                          //var total_payable = parseFloat(total)+parseFloat(total_shipping_amount);
+                          //var total_payable = total_payable.toFixed(1);
+                          //$("#shipping_charge_amount").text(total_shipping_amount+' '+"{CURRENCY_CODE}");  
+                          //$("#total_payable_amount").text(total_payable+' '+"{CURRENCY_CODE}"); 
+                          //$("#shipping_charge_amount").text(total_shipping_amount+' '+"{CURRENCY_CODE}");  
+                          //$("#total_payable_amount").text(total_payable+' '+"{CURRENCY_CODE}"); 
+                          //$("#total_payable_final_amount").val(total_payable); 
+                          }
+                  }, 'json');
+                }
+            });
+
+            $(".corrency_list_after_login").hide();
+            
+            // ming lau functions
+            $(".corrency_list").on('change', function() {
+              selected_currency = $(this).find("option:selected").attr("title");
+
+              $.post('{SITE_URL}ajax-product-start-order', 
+                {
+                    action: 'get_selected_currency_rate',
+                    currency_code:selected_currency,
+                }, 
+                function(data) {
+                  if (data) {
+                    selected_currency_rate = data["currency_rate"];
+                    change_currecy();
+                  }
+                }, 'json');
+
+              // var apiKey = '1305a3510e4497c78a04';
+              // fromCurrency = "NGN";
+              // toCurrency = selected_currency;
+              // var query = fromCurrency + '_' + toCurrency;
+              
+              // var url = 'https://free.currconv.com/api/v7/convert?q='+query+'&compact=ultra&apiKey=' + apiKey;
+              // $.ajax({
+              //  method: "GET",
+              //  url: url,
+              //  dataType: "json",
+              //  success:function(result) {
+              //    selected_currency_rate = result[query];
+              //    change_currecy();
+              //  }
+              // });
+            })
+
+            function change_currecy() {
+              var your_offer = $("#your_offer").val();
+              var quantity = $("#quantity").val();
+              var ngn_total = your_offer * quantity;
+              var changed_total = round(parseFloat(ngn_total * selected_currency_rate), 2);
+              var selected_shipping_amount = $("#shipping_charge").val();
+              var changed_shipping_amount = round(parseFloat(selected_currency_rate * selected_shipping_amount), 2);        
+              var total_payable = changed_total + parseFloat(changed_shipping_amount);
+              var total_payable = round(total_payable, 2);
+              
+              $("#sub_total_amount").text(changed_total+' '+ selected_currency); 
+              $("#shipping_charge_amount").text(changed_shipping_amount+' '+ selected_currency);  
+              $("#total_payable_amount").text(total_payable+' '+ selected_currency); 
+              $("#total_payable_final_amount").val(total_payable);
+            }
+
+            function round(value, decimals) {
+              return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+            }
+        });   
+</script>

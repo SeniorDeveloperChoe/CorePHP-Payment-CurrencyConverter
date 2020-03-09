@@ -1,0 +1,17 @@
+<tr>
+    <td>
+        %TRANSACTION_ID%
+    </td>
+    <td>
+       %TRANSACTION_TYPE%
+    </td>
+    <td>
+        %AMOUNT%
+    </td>
+    <td>
+        %STATUS%
+    </td>
+    <td>
+        %DATE%
+    </td>
+</tr>

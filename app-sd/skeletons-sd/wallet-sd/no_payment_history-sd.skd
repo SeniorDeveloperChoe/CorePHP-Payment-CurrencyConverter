@@ -1,0 +1,28 @@
+<section id="content" class="user-dashboard">
+	<!--desktop view-->
+	%LEFT_PANEL%
+	<!--desktop view-->
+	<div class="user-dashboard-main">
+		<div class="container-fluid">
+			<!--mobile view-->
+			
+			<!--mobile view-->
+			<div class="row">
+				<div class="col-md-12 col-sm-12 simPro">
+					<div class="main-content usr-profile">
+						<div id="supProfile">
+							<h5 class="main-heading">
+								{PAYMENT_HISTORY}
+							</h5>
+							<div class="no-msg">
+	                         <img src="{SITE_IMG}icons/alert.png" alt="">
+	                         <h2>{MSG_NO_RECORDS_FOUND}</h2>
+	                         <p>{NOT_MADE_PAYMENT}</p>
+	                        </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

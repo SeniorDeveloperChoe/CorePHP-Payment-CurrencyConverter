@@ -1,0 +1,415 @@
+<section id="content" class="user-dashboard">
+    %LEFTPANEL%
+    <div class="wallet-section user-dashboard-main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 simPro">
+                    <div class="row">
+                        <div class="col-md-5 col-md-push-7"> <!--col-sm-5 col-sm-push-7-->
+                            <div class="main-content dark-section">
+                                <h3>{TOTAL_AMOUNT_IN_WALLET} : <span class="wallet_amount_section">%WALLET_AMOUNT% / %WALLET_AMOUNT_USD%</span></h3>
+                                <h3>{TOTAL_ONHOLD_AMOUNT} : <span class="wallet_onHold_amount">%ON_HOLD_AMOUNT% / %ON_HOLD_AMOUNT_USD%</span></h3>
+                                <div class="wallet-buttons clearfix">
+                                    <button class="btn btn-system btn-block wallet">{ADD_AMOUNT_IN_WALLET}</button>
+                                    <button class="btn btn-system btn-block redeem">{REQUEST_FOR_REDEEM}</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-md-pull-5"> <!--col-sm-7 col-sm-pull-5-->
+                            <div class="main-content">
+                                <h2>{MYWALLET}</h2>
+                                <div class="credit-amount">
+                                    <div class="total-amount">
+                                        <h3>{TRANSACTION_HISTORY}<span></span></h3>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered %HIDE_CLASS%">
+                                        <thead>
+                                            <tr>
+                                                <th>{TRANSACTION_ID}</th>
+                                                <th>{TRANSACTION_TYPE}</th>
+                                                <th>{AMOUNT}</th>
+                                                <th>{LBL_STATUS}</th>
+                                                <th>{DATE}</th>
+                                            </tr>
+                                        </thead>
+                                       %TRANSACTIONS%
+                                    </table>
+                                </div>
+                                <!-- <div class="credit-amount">
+                                    <div class="total-amount">
+                                        <h3>Total Purchase Product Amount : <span>$693</span></h3>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Project</th>
+                                                <th>Listing Type</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>abc.com</td>
+                                                <td>Established Site</td>
+                                                <td>Completed</td>
+                                                <td>02/12/2016</td>
+                                                <td>$30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>dsfb.com</td>
+                                                <td>Starter Site</td>
+                                                <td>Pending</td>
+                                                <td>04/20/2016</td>
+                                                <td>$40</td>
+                                            </tr>
+                                            <tr>
+                                                <td>djfh.com</td>
+                                                <td>Established Site</td>
+                                                <td>Pending</td>
+                                                <td>09/28/2016</td>
+                                                <td>$45</td>
+                                            </tr>
+                                            <tr>
+                                                <td>dfkn.com</td>
+                                                <td>Established Site</td>
+                                                <td>Completed</td>
+                                                <td>02/02/2016</td>
+                                                <td>$20</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#05AL</td>
+                                                <td>Starter Site</td>
+                                                <td>Completed</td>
+                                                <td>08/20/2016</td>
+                                                <td>$35</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Reddem Model Start-->
+<div id="Req_for_redeem" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{REDEEM_REQUEST}</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" method="post" name="Req_reddeem" id="Req_reddeem">
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="desc">
+                {REDEEM_REQUEST} <br>
+                Min : <b id="redeem_min_price">3500 NGN<b>
+            </label>
+            <div class="col-sm-4">
+                <input type="text" name="amount" id="amount" class="form-control" placeholder="{REDEEM_REQUEST}">
+            </div>
+            <div class="col-sm-5">
+                <!-- [20-03-03 by Ming Lau...] choose tab USD and NDN -->
+                <div class="redeem_currency_list_area">
+                    <select class="selectpicker corrency_list" id="redeem_currency_list" data-size="5">
+                      <option title="Choose your currency" disabled>Choose your currency</option>
+                      <option title="NGN" selected>NGN, Naigeria</option>
+                      <option title="USD">USD, United States</option>
+                      <option title="EUR">EUR, Europe</option>
+                      <option title="CAD">CAD, Canada</option>
+                      <option title="GBP">GBP, United Kingdom</option>
+                      <option title="JPY">JPY, Japan</option>
+                      <option title="HKD">HKD, HongKong</option>
+                      <option title="ILS">ILS, Israeli</option>
+                      <option title="RUB">RUB, Russia</option>
+                      <option title="SGD">SGD, Singapore</option>
+                    </select>
+                </div>
+                <!-- end drop_down_list -->
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-system submit_red_req">{REDEEM_REQUEST}</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">{CANCEL}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Reddem Model End-->
+
+<!--Add to Wallet Start-->
+<div id="add_to_wallet" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{ADD_AMOUNT_IN_WALLET}</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" method="post" name="frm_wallet_amount" id="frm_wallet_amount">
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="desc">{ADD_AMOUNT_IN_WALLET}*</label>
+            <div class="col-sm-4">
+                <input type="text" name="wallet_amount" id="wallet_amount" class="form-control" placeholder="{ENTER_AMOUNT}">
+                <input type="hidden" name="action" value="wallet">
+            </div>
+            <div class="col-sm-5">
+                <!-- [20-03-03 by Ming Lau...] choose tab USD and NDN -->
+                <div class="add_wallet_currency_list_area">
+                    <select class="selectpicker corrency_list" id="add_wallet_currency_list" data-size="5">
+                      <option title="Choose your currency" disabled>Choose your currency</option>
+                      <option title="NGN" selected>NGN, Naigeria</option>
+                      <option title="USD">USD, United States</option>
+                      <option title="EUR">EUR, Europe</option>
+                      <option title="CAD">CAD, Canada</option>
+                      <option title="GBP">GBP, United Kingdom</option>
+                      <option title="JPY">JPY, Japan</option>
+                      <option title="HKD">HKD, HongKong</option>
+                      <option title="ILS">ILS, Israeli</option>
+                      <option title="RUB">RUB, Russia</option>
+                      <option title="SGD">SGD, Singapore</option>
+                    </select>
+                </div>
+                <!-- end drop_down_list -->
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-system submit_wallet_amount">{SUBMIT}</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">{CANCEL}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Add to Wallet End-->
+
+<script type="text/javascript">
+ $(document).on("hidden.bs.modal",".modal",function(){
+            $(this).find('form')[0].reset();
+            $("#Req_reddeem").each(function(){
+              $(this).validate().resetForm();
+            });                  
+        });
+    $(document).ready(function() {
+        $(".corrency_list_after_login").hide();
+
+        $(document).on("click",".redeem",function(){
+            $('#Req_for_redeem').modal('show');
+        });
+         $(document).on("click",".wallet",function(){
+            $('#add_to_wallet').modal('show');
+        });
+
+        var redeem_amount = $("#amount").val();
+        $("#Req_reddeem").validate({
+            ignore: [],
+            errorClass: 'help-block',
+            errorElement: 'span',
+            highlight: function(element) {
+                $(element).parent('.form-group').addClass('has-error');
+            },
+            unhighlight: function(element) {
+                $(element).parent('.form-group').removeClass('has-error');
+            },
+            errorPlacement: function(error, element) {
+                if (element.attr("data-error-container")) {
+                    error.appendTo(element.attr("data-error-container"));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            rules: {
+                amount: {
+                    required: true,
+                    max: %WALLET_AMOUNT_VALIDATION%,
+                }
+            },
+            messages: {
+                amount: {
+                    required: "{ERR_AMOUNT_REDEEM}",
+                    max: "{LBL_INSUFFICIENT_MSG}",
+                }
+            },
+        });
+
+        var selected_currency = "NGN";
+        var selected_currency_rate = 1;
+        $(document).on("click",".submit_wallet_amount",function(){            
+            $("#frm_wallet_amount").validate({
+                ignore: [],
+                errorClass: 'help-block',
+                errorElement: 'span',
+                highlight: function(element) {
+                    $(element).parent('.form-group').addClass('has-error');
+                },
+                unhighlight: function(element) {
+                    $(element).parent('.form-group').removeClass('has-error');
+                },
+                errorPlacement: function(error, element) {
+                    if (element.attr("data-error-container")) {
+                        error.appendTo(element.attr("data-error-container"));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                rules: {
+                    wallet_amount: {
+                        required: true,min:1,maxlength:10
+                    }
+                },
+                messages: {
+                    wallet_amount: {
+                        required: "{PLEASE_ENTER_AMOUNT}",
+                        min:"{PLEASE_ENTER_AMOUNT_GREATER_THEN_0}",
+                        maxlength:"{PLEASE_ENTER_AMOUNT_LESS_THAN_11_DIGITS}"
+                    }
+                },
+            });
+
+            if($("#frm_wallet_amount").valid()){
+                /*window.location.href="{SITE_URL}add-to-wallet";*/
+                // $("#frm_wallet_amount").submit();
+                var wallet_amount=$("#wallet_amount").val();
+                $.post('{SITE_URL}ajax-wallet', 
+                {
+                    amount: wallet_amount,
+                    action: 'Request_for_add',
+                    currency_code: selected_currency,
+                    currency_rate: selected_currency_rate,
+                }, 
+                function(data) {
+                    $("#wallet_amount").val("");
+                    $('#add_to_wallet').modal('hide');
+                    if (data.code && data['code'] == '200') {
+                        $(".wallet_amount_section").text(data['amount']);
+                        $('.table thead').append(
+                            "<tr style='text-align: center;'>" +
+                                "<td>-</td>" +
+                                "<td>InWallet</td>" +
+                                "<td>" + data['changed_amount'] + "</td>" +
+                                "<td>Paid</td>" +
+                                "<td>" + data['history_date'] + "</td>" +
+                            "</tr>"
+                        );
+                        window.location.href = data['pay_url'];
+                        toastr["success"]("Addion request has been submitted successfully");
+                    } else if (data.code && data.code == '400') {
+                        // location.reload();
+                        toastr["error"]("Please add your PayPal email account first to complete addition request");
+                    }
+                }, 'json');
+            }
+        });
+
+        var redeem_min_price = 3500;
+        $(".submit_red_req").click(function(e){
+            e.preventDefault();
+            if($("#Req_reddeem").valid()){        
+                $("#Req_for_redeem").hide();
+
+                // var redeem_min_price_text = $('#redeem_min_price').val();
+                // redeem_min_price = parseInt(redeem_min_price_text.replace(selected_currency, ''));
+
+                var amount = $('#amount').val();
+                if(redeem_min_price < amount) {
+                    alert('you have insufficient funds to cover your redeem request');
+                }
+                else {
+                    $.ajax({
+                        url: "{SITE_URL}ajax-wallet",
+                        type: "POST",
+                        dataType: "json",
+                        data: {
+                          amount: amount,
+                          action: 'Request_for_redeem',
+                          currency_code: selected_currency,
+                          currency_rate: selected_currency_rate
+                        },
+                        success: function(data) {
+                            $("#amount").val("");
+                            $('#Req_for_redeem').modal('hide');
+                            if (data.code && data['code'] == '200') {
+                                $(".wallet_amount_section").text(data['amount']);
+                                $('.table thead').append(
+                                    "<tr style='text-align: center;'>" +
+                                        "<td>-</td>" +
+                                        "<td>Redeem</td>" +
+                                        "<td>" + data['changed_amount'] + "</td>" +
+                                        "<td>Peding</td>" +
+                                        "<td>" + data['history_date'] + "</td>" +
+                                    "</tr>"
+                                );
+                                window.location.href = data['pay_url'];
+                                toastr["success"]("{REDEEM_REQUEST_SUCCESS}");
+                            }
+                            else if (data.code && data['code'] == '300') {
+                                // location.reload();
+                                toastr["error"]("{LBL_INSUFFICIENT_MSG}");
+                            } else if (data.code && data['code'] == '400') {
+                                // location.reload();
+                                toastr["error"]("{MSG_ADD_PAYPAL_FOR_COMPL_REDEEM_REQ}");
+                            }
+                        }
+                    });
+                }
+            }
+          });
+
+        // ming lau functions
+        $("#add_wallet_currency_list, #redeem_currency_list").on('change', function() {
+          selected_currency = $(this).find("option:selected").attr("title");
+
+          $.post('{SITE_URL}ajax-product-start-order', 
+            {
+                action: 'get_selected_currency_rate',
+                currency_code:selected_currency,
+            }, 
+            function(data) {
+              if (data) {
+                selected_currency_rate = data["currency_rate"];
+                if(selected_currency == "NGN")
+                   redeem_min_price = 3500;
+                else if(selected_currency == "USD")
+                    redeem_min_price = 10;
+                else {
+                    redeem_min_price = round(3500 * selected_currency_rate, 0);
+                }
+                $('#redeem_min_price').text(redeem_min_price + " " + selected_currency);
+                // change_currecy();
+              }
+            }, 'json');
+        })
+
+        function change_currecy() {
+            var amount_text = "%WALLET_AMOUNT%".replace('NGN', '');
+            var onhold_amount_text = "%ON_HOLD_AMOUNT%".replace('NGN', '');
+            amount_text = amount_text.replace(',','');
+            onhold_amount_text = onhold_amount_text.replace(',','');
+
+            var changed_amount = round(parseFloat(amount_text * selected_currency_rate), 2);
+            var changed_onhold_amount = round(parseFloat(onhold_amount_text * selected_currency_rate), 2);
+
+            $(".wallet_amount_section").text(changed_amount + " " + selected_currency);
+            $(".wallet_onHold_amount").text(changed_onhold_amount + " " + selected_currency);
+        }
+
+        function round(value, decimals) {
+          return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+        } 
+    });
+</script>

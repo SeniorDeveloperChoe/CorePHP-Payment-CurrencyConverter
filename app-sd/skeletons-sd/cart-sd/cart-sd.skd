@@ -1,0 +1,434 @@
+<section id="content">
+    <div class="shopping-cart">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12">
+                        <form class="form frm_cart" method="post">
+                            <div class="main-content">
+                                <h2>
+                                    {MY_CART} 
+                                </h2>
+                                %CART_PRODUCTS%
+                            </div>
+                            <div class="continue-shopping">
+                                <input type="hidden" name="token" value="%TOKEN%">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="buttons">
+                                            <a href="{SITE_URL}search-product" class="btn btn-default"><i class="fa fa-angle-left"></i> &nbsp;{CONTINUE_SHOPPING}</a>
+                                            <button type="submit" name="addProduct" class="btn btn-system buy_now">{PLACE_ORDER}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <!-- [20-03-03 by Ming Lau...] choose tab USD and NDN -->
+                            <div class="cart_pay_selecter">
+                                <select class="selectpicker corrency_list" data-size="5">
+                                    <option title="Choose your currency" disabled>Choose your currency</option>
+                                    <option title="NGN" selected>NGN, Naigeria</option>
+                                    <option title="USD">USD, United States</option>
+                                    <option title="EUR">EUR, Europe</option>
+                                    <option title="CAD">CAD, Canada</option>
+                                    <option title="GBP">GBP, United Kingdom</option>
+                                    <option title="JPY">JPY, Japan</option>
+                                    <option title="HKD">HKD, HongKong</option>
+                                    <option title="ILS">ILS, Israeli</option>
+                                    <option title="RUB">RUB, Russia</option>
+                                    <option title="SGD">SGD, Singapore</option>
+                                </select>
+                            </div>
+                            <!-- end drop_down_list -->
+                            <div class="main-content price-details">
+                                <h4>
+                                    {PRICE_DETAILS}
+                                </h4>
+                                <p>
+                                    <span class="content">{PRICE} (%TOTAL_ITEM% item)</span>
+                                    <span class="price totalItemPrice">%TOTAL_ITEM_PRICE%</span>
+                                </p>
+                                <p>
+                                    <span class="content">{DELIVERY_CHARGES}</span>
+                                    <span class="price free shippingCharge">%TOTAL_SHIPPING_CHARGE%</span>
+                                </p>
+                                <p class="amount-payable">
+                                    <span class="content">{AMOUNT_PAYABLE}</span>
+                                    <span class="price subTotal">%TOTAL_PAYABLE_AMOUNT%</span>
+                                </p>
+                            </div>
+                            <div class="main-content total-savings">
+                            </div>
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img src="{SITE_IMG}icons/shield.png" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <p class="safe">{CART_STATIC_TEXT}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- start supplier details -->
+<div id="myModal" class="modal fade supDetails" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{SUPPLIER_DETAILS}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="start-order">
+                    <div class="supplier-details">
+                        <p class="sup-name">
+                            <label>{SUPPLIER}</label>
+                            <span class="supplierName">Ivy Chan, Shenzhen Dovina Electronic Technology Co., Ltd.</span>
+                        </p>
+                        <div class="supplier-name">
+                            <p>
+                                <label>{COMPANY_NAME} :</label>
+                                <span class="companyName">Shenzhen Dovina Electronic Technology Co., Ltd.</span>
+                            </p>
+                            <p>
+                                <label>{CONTACT_NAME} :</label>
+                                <span class="contatcName">Ivy Chan</span>
+                            </p>
+                            <p>
+                                <label>{COUNTRY_REGION} :</label>
+                                <span class="location">IN &nbsp;<img src="{SITE_IMG}flags/india.png" alt=""></span>
+                            </p>
+                            <p>
+                                <label>{CONTACT_NUMBER} :</label>
+                                <span class="contactNo">6465121378</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end supplier details -->
+
+<!-- start start order modal -->
+<div id="pay_buyNow" class="modal fade start-order-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{BUY_NOW}</h4>
+      </div>
+      <div class="modal-body payText">
+        <p>{CHECKOUT_CONFIRMATION}</p>
+        <p>{TOTAL_WALLET_AMOUNT}: <span class="theme-color" id="display_wallet_amount"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-system payUsingPaypal">{PAY_USING_PAYPAL}</button>
+        <button class="btn btn-system payUsingWallet">{PAY_USING_WALLET}</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">{LBL_CLOSE}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end start order modal -->
+
+<script>
+        $(document).ready(function() {
+            // TODO 
+            $(document).on('click', '.buy_now, .payUsingPaypal, .payUsingWallet', function(e) {   
+                // alert('clicked buy_now');
+                e.preventDefault();
+                addOverlay();
+                var buy_now="";
+                if($(this).hasClass("buy_now")){
+                  $.ajax({
+                    url: "{SITE_URL}ajax-product-start-order",
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        amount: $(".subTotal").text().replace('{CURRENCY_CODE}',''),
+                        action: 'chk-user-wallet'
+                    },
+                    success: function(data) {
+                      if(data.need_to_pay=="login"){
+                            window.location.href = '{SITE_URL}login';
+                            return false;
+                      }
+                      if(data.need_to_pay==""){
+                        $(".payUsingPaypal").remove();
+                        var wallet_amount_text = $(".subTotal").text();
+                        $(".payUsingWallet").text("{PAY_USING_WALLET} ("+wallet_amount_text+")");
+
+                      }else if(data.need_to_pay!=""){
+                        $(".payUsingWallet").remove();
+                      }
+                      $("#display_wallet_amount").text(data.wallet_amount + " {CURRENCY_CODE}");
+
+                        $("#pay_buyNow").modal('toggle');
+                        removeOverlay();
+                    }
+                  });
+                }
+                 if($(this).hasClass("payUsingPaypal") || $(this).hasClass("payUsingWallet")){
+                        $(".frm_cart").submit();
+                  }
+            });
+
+            $(".inquiry").click(function(){
+                $(this).siblings(".other-inquiry").toggle();
+            });
+            
+            var OrderFormData = new FormData();
+            var productId="";
+            $(document).on('change', '.ProductOrderDocs', function(e) {
+                var _this=$(this);
+                productId=$(this).attr("id");
+                    e.preventDefault();
+                     var imagPath = $(this).val();
+                    var lastdotval = imagPath.lastIndexOf(".");
+                    var res = imagPath.substr(lastdotval + 1, 4);
+                    var file_data = $(this).prop('files')[0];
+                    OrderFormData.append("attechments", file_data);     
+                    OrderFormData.append("action", 'upload_orderDocs');            
+                    OrderFormData.append("token", '%TOKEN%');    
+                    OrderFormData.append("itemid", productId);  
+                    if (res != 'png' && res != 'PNG' && res != 'JPG' && res != 'jpg' && res != 'JPEG' && res != 'jpeg' && res != 'odt' && res != 'docx' && res != 'doc' && res != 'pdf') {
+                        toastr["error"]("{PLEASE_SELECT_VALID_IMAGE}");
+                        return false;
+                        }  
+                    else{
+                        $.ajax({
+                                url: '{SITE_URL}ajax-cart',
+                                type: 'POST',
+                                dataType: 'json',
+                                cache:false,
+                                contentType: false, 
+                                processData: false,
+                                data: OrderFormData,
+                                success: function(data) {
+                                    _this.parent().parent().parent().parent().find('.orderImgs').html(data.all_photos);
+                                }
+                            })                   
+                          event.stopImmediatePropagation();
+                    }
+            });
+
+
+            $(document).on('click', '.deleteimage', function(e) {
+                e.preventDefault();
+                var del_id = $(this).data("id");
+                if (confirm("{ARE_YOU_SURE_YOU_WANT_TO_DELETE}")) {
+                    addOverlay();
+                    $.post('{SITE_URL}ajax-cart', {
+                        action: 'del_image',
+                        token: '%TOKEN%',
+                        itemid:productId,
+                        id: del_id
+                    }, function(data) {
+                        removeOverlay();
+                        if (data && data.code == "200") {
+                            $("li#" + data.id).remove();
+                        } else {
+                            showtoast('error', "{SOMETHING_WENT_WRONG}");
+                        }
+                    }, 'json');
+                }
+            });  
+
+            $(document).on("click",".removeFromCart",function(){
+                var deleteId=$(this).attr("id");
+                var thisVar=$(this);
+                if(confirm("{ARE_YOU_WANT_TO_DELETE_THIS_PRODUCT}")){
+                    $.ajax({
+                          url: "{SITE_URL}ajax-cart",
+                          type: "POST",
+                          dataType: "json",
+                          data: {
+                              itemid: deleteId,
+                              action: 'deleteItem'
+                          },
+                          success: function(data) {
+                            toastr["success"]("{DELETE_ITEM_FROM_CART}");
+                            setTimeout(function(){
+                                window.location.reload();
+                            },1000);
+                            //thisVar.parent().parent().parent().parent().addClass("hide");
+                          }
+                    });
+                 }
+            });
+
+
+        $('.cartQuentity').keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                return false;
+            }
+        });
+
+        // Ming Lau -> variable
+        var selected_currency = "NGN";
+        var selected_currency_rate = 1;
+        var totalItemPrice = parseFloat($('.totalItemPrice').text().replace('{CURRENCY_CODE}',''));
+        var payable_amount = parseFloat($('.subTotal').text().replace('{CURRENCY_CODE}',''));
+        var shipping_amount = parseFloat($('.shippingCharge').text().replace('{CURRENCY_CODE}',''));
+
+        $('.cartQuentity').keyup(function (e) { 
+                if($(this).val()>0){
+                    this.value = this.value.replace(/[^0-9]/g,'');
+                }else{
+                    this.value = this.value.replace(/[^1-9]/g,'');
+                }
+
+                var $button = $(this);
+                var oldValue = $button.val();
+                var newVal = oldValue;
+                var product_min_quentity = $button.closest('.sp-quantity').find("input.min-quntity-input").val();
+
+                if(newVal==""){
+                    $button.val(product_min_quentity);
+                }else{
+
+                    if (oldValue >= product_min_quentity) {
+                        $button.val(newVal);
+
+                        var product_min_price = 0;
+                        product_min_price = $button.closest('.sp-quantity').find("input.min-price-input").val().replace('{CURRENCY_CODE}','');
+                        
+                        var newProductPrice =  parseInt(product_min_price) * newVal;
+                        $button.parent().parent().parent().parent().find("h5").text(newProductPrice+' '+'{CURRENCY_CODE}');
+                        $button.parent().parent().parent().parent().find(".totalPrice").val(newProductPrice);
+                        totalItemPrice = 0;
+                        $( ".productTotalPrice" ).each(function( index ) {
+                            var itemPrices=$(this).text().replace('{CURRENCY_CODE}','');
+                            totalItemPrice = parseInt(totalItemPrice) + parseInt(itemPrices);
+                        });
+                        
+                        shipping_amount = parseInt($(".shippingCharge").text().replace('{CURRENCY_CODE}',''));
+                        payable_amount = shipping_amount + totalItemPrice;
+                        
+                        change_currecy(totalItemPrice, shipping_amount, payable_amount);
+
+                        // $(".totalItemPrice").text(totalItemPrice+' '+ selected_currency);
+                        // $(".subTotal").text(payable_amount+' '+ selected_currency);
+                    }else{
+                        $button.val(product_min_quentity);
+                    }   
+                }
+
+            });
+
+
+             $(".ddd").on("click", function () {
+                var $button = $(this);
+                var oldValue = $button.closest('.sp-quantity').find("input.quntity-input").val();
+
+                var product_min_quentity = $button.closest('.sp-quantity').find("input.min-quntity-input").val();
+               
+                // ming lau
+                if ($button.text() == "+") {
+                    var newVal = parseFloat(oldValue) + 1;
+                } else {
+                    // Don't allow decrementing below zero
+                    if (oldValue > product_min_quentity) {
+                        var newVal = parseFloat(oldValue)-1;
+                    } else {
+                        newVal = oldValue;
+                    }
+                }
+                $button.closest('.sp-quantity').find("input.quntity-input").val(newVal);
+                  
+                var product_min_price = 0;
+                product_min_price = $button.closest('.sp-quantity').find("input.min-price-input").val();
+                new_product_min_price = product_min_price.replace('{CURRENCY_CODE}','');
+                var newProductPrice =  parseInt(new_product_min_price) * parseInt(newVal);
+                
+                $button.parent().parent().parent().parent().find("h5").text(newProductPrice+' '+'{CURRENCY_CODE}');
+                $button.parent().parent().parent().parent().find(".totalPrice").val(newProductPrice);
+
+                // var totalItemPrice = $(".totalItemPrice").text().replace('{CURRENCY_CODE}','');
+                if($button.text() == "+"){
+                    // totalItemPrice = parseInt(totalItemPrice) + parseInt(product_min_price);
+                    totalItemPrice = totalItemPrice + parseInt(product_min_price);
+                }else if($button.text() == "-"){
+                    if (oldValue > product_min_quentity) {
+                        // totalItemPrice = parseInt(totalItemPrice) - parseInt(product_min_price);
+                        totalItemPrice = totalItemPrice - parseInt(product_min_price);
+                    }
+                }
+                
+                shipping_amount = parseInt($(".shippingCharge").text().replace('{CURRENCY_CODE}',''));
+                payable_amount= shipping_amount + parseInt(totalItemPrice);
+
+                change_currecy(totalItemPrice, shipping_amount, payable_amount);
+                
+                // $(".totalItemPrice").text(totalItemPrice+' '+'{CURRENCY_CODE}');
+                // $(".subTotal").text(payable_amount+' '+'{CURRENCY_CODE}');
+            });
+
+            $(document).on("click",".supplierDetail",function(){
+                var supplierId=$(this).attr("id");
+                
+                    $.ajax({
+                      url: "{SITE_URL}ajax-cart",
+                      type: "POST",
+                      dataType: "json",
+                      data: {
+                          supplierid: supplierId,
+                          action: 'getSupplierDetail'
+                      },
+                      success: function(data) {
+                         $(".supplierName").text(data.supplierName);
+                         $(".companyName").text(data.company_name);
+                         $(".location").text(data.location);
+                         $(".contactNo").text(data.contact_no_1);
+                         $(".contatcName").text(data.contact_person_name);
+                      }
+                    });
+            });
+
+            $(".corrency_list_after_login").hide();
+            
+            // ming lau functions
+            $(".corrency_list").on('change', function() {
+              selected_currency = $(this).find("option:selected").attr("title");
+
+              $.post('{SITE_URL}ajax-product-start-order', 
+                {
+                    action: 'get_selected_currency_rate',
+                    currency_code:selected_currency,
+                }, 
+                function(data) {
+                  if (data) {
+                    selected_currency_rate = data["currency_rate"];
+                    change_currecy(totalItemPrice, shipping_amount, payable_amount);
+                  }
+                }, 'json');
+            });
+
+            function change_currecy(totalItemPrice, shipping_amount, payable_amount) {
+                // [20-03-03 by Ming Lau...] -> change to selected curreny and amount
+                var changed_totalItemPrice = round(parseFloat(selected_currency_rate * totalItemPrice), 2);
+                var changed_payable_amount = round(parseFloat(selected_currency_rate * payable_amount), 2);
+                var changed_shipping_amount = round(parseFloat(selected_currency_rate * shipping_amount), 2);
+
+                $(".shippingCharge").text(changed_shipping_amount +' '+ selected_currency);
+                $(".totalItemPrice").text(changed_totalItemPrice+' '+ selected_currency);
+                $(".subTotal").text(changed_payable_amount+' '+ selected_currency);
+            }
+
+            function round(value, decimals) {
+              return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+            }
+
+        });
+
+</script>

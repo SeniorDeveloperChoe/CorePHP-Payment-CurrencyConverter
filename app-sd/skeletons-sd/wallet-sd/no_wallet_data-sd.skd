@@ -1,0 +1,7 @@
+<div id="supProfile">
+	<div class="no-msg">
+     <img src="{SITE_IMG}icons/wallet.png" alt="">
+     <h2>{OPPS}</h2>
+     <p>{YOUR_WALLET_IS_EMPTY}</p>
+    </div>
+</div>

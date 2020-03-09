@@ -1,0 +1,60 @@
+<div class="shopping-item">
+    <div class="media">
+        <div class="pull-left">
+            <div class="pro-img">
+                <a href="{SITE_URL}product-detail/%PRODUCT_SLUG%" target="">
+                <img src="%PRODUCT_IMG%" alt="">
+                </a>
+            </div>
+            <div class="sp-quantity">
+                <div class="sp-minus"> <a class="ddd">-</a>
+                </div>
+                <div class="sp-input">
+                    <input type="text" name="%QUENTITY%" class="quntity-input cartQuentity" value="%ORDER_QUANTITY%" />
+                    <input type="hidden" class="min-quntity-input" value="%ORDER_QUANTITY%">
+                    <input type="hidden" class="min-price-input" value="%MIN_PRICE%">
+                </div>
+                <div class="sp-plus"> <a class="ddd">+</a>
+                </div>
+            </div>
+        </div>
+        <div class="media-body">
+            <h4 class="p-name">
+                <a href="{SITE_URL}product-detail/%PRODUCT_SLUG%" target="">%PRODUCT_TITLE%</a>
+            </h4>
+            <p>%CAT_NAME%</p>
+            <h5 class="price productTotalPrice">%TOTAL_PRICE%</h5>
+            <input type="hidden" name="%AMOUNT%" class="totalPrice" value="%TOTAL_AMOUNT%">
+            <!-- <strike>$999</strike> -->
+            <p class="remove-this"><a id="%ID%" class="removeFromCart">{LBL_REMOVE}</a></p>
+            <p class="inquiry"><a>{OTHER_INQUIRY_TO_SELLER} <i class="fa fa-angle-down"></i></a></p>
+            <span class="sup-det"><a id="%SUPPLIER_ID%" class="supplierDetail" data-toggle="modal" data-target=".supDetails">{SUPPLIER_DETAILS}</a></span>
+            <div class="other-inquiry contact-seller-section">
+                
+                    <!--  <div class="form-group">
+                        <input type="text" name="price" class="form-control" placeholder="Enter per unit price*">
+                        </div> -->
+                    <div class="form-group">
+                        <textarea class="form-control" name="%MESSAGE_DESC%" rows="3" placeholder="{CART_STATIC_TEXT_PLACEHOLDER}"></textarea>
+                    </div>
+                    <div class="attach-file">
+                        <p>{ATTACH_FILE}</p>
+                        <ul class="orderImgs">
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);" title="{ADD_MORE_FILE}">
+                                    <input type="file" id="%PRODUCT_ID%" class="form-control ProductOrderDocs" placeholder="{CHOOSE_FILE}">
+                                    <div class="add-more">
+                                        <div class="add-more-img">
+                                            <img src="{SITE_IMG}icons/add.png">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
