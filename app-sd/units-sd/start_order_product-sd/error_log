@@ -1,0 +1,49 @@
+[26-Nov-2019 06:41:44 Asia/Kolkata] PHP Notice:  Undefined index: userId in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 100
+[26-Nov-2019 01:54:37 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 141
+[26-Nov-2019 01:54:42 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 141
+[26-Nov-2019 07:25:25 Asia/Kolkata] PHP Warning:  Illegal string offset 'type' in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 138
+[26-Nov-2019 07:30:19 Asia/Kolkata] PHP Notice:  Undefined variable: curl in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 37
+[26-Nov-2019 07:30:19 Asia/Kolkata] PHP Warning:  curl_setopt_array() expects parameter 1 to be resource, null given in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 38
+[26-Nov-2019 07:30:19 Asia/Kolkata] PHP Notice:  Undefined variable: curl in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 52
+[26-Nov-2019 07:30:19 Asia/Kolkata] PHP Warning:  curl_exec() expects parameter 1 to be resource, null given in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 52
+[26-Nov-2019 07:30:19 Asia/Kolkata] PHP Notice:  Undefined variable: curl in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 53
+[26-Nov-2019 07:30:19 Asia/Kolkata] PHP Warning:  curl_error() expects parameter 1 to be resource, null given in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 53
+[26-Nov-2019 07:30:19 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 62
+[26-Nov-2019 07:30:19 Asia/Kolkata] PHP Notice:  Array to string conversion in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 139
+[26-Nov-2019 07:31:04 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 62
+[26-Nov-2019 07:31:04 Asia/Kolkata] PHP Notice:  Array to string conversion in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 139
+[26-Nov-2019 07:33:11 Asia/Kolkata] PHP Recoverable fatal error:  Object of class stdClass could not be converted to string in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 55
+[26-Nov-2019 07:34:55 Asia/Kolkata] PHP Notice:  Array to string conversion in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 139
+[26-Nov-2019 07:40:30 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 63
+[26-Nov-2019 07:40:30 Asia/Kolkata] PHP Notice:  Array to string conversion in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 139
+[26-Nov-2019 07:41:37 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 63
+[26-Nov-2019 07:41:37 Asia/Kolkata] PHP Notice:  Array to string conversion in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 139
+[26-Nov-2019 08:17:00 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 63
+[26-Nov-2019 08:18:12 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 45
+[26-Nov-2019 08:19:25 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 36
+[26-Nov-2019 08:21:16 Asia/Kolkata] PHP Notice:  Undefined variable: tranx in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 36
+[26-Nov-2019 08:21:16 Asia/Kolkata] PHP Notice:  Undefined variable: tranx in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 39
+[26-Nov-2019 08:26:26 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '3' (T_LNUMBER), expecting ',' or ';' in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 40
+[27-Nov-2019 00:48:45 Asia/Kolkata] PHP Notice:  Undefined index: userId in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 100
+[30-Nov-2019 03:09:02 Asia/Kolkata] PHP Notice:  Use of undefined constant _POST - assumed '_POST' in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 66
+[30-Nov-2019 03:09:02 Asia/Kolkata] PHP Warning:  Illegal string offset 'buyNow' in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 66
+[30-Nov-2019 04:39:05 Asia/Kolkata] PHP Notice:  Undefined variable: secret in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 21
+[30-Nov-2019 04:39:05 Asia/Kolkata] PHP Notice:  Undefined index: data in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 33
+[30-Nov-2019 04:43:41 Asia/Kolkata] PHP Recoverable fatal error:  Object of class stdClass could not be converted to string in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 37
+[30-Nov-2019 05:08:36 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 37
+[30-Nov-2019 05:11:49 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '{', expecting ';' in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 59
+[30-Nov-2019 05:14:13 Asia/Kolkata] PHP Warning:  Creating default object from empty value in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 59
+[30-Nov-2019 05:14:13 Asia/Kolkata] PHP Warning:  A non-numeric value encountered in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 60
+[30-Nov-2019 05:14:13 Asia/Kolkata] PHP Warning:  Illegal string offset 'status' in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 37
+[30-Nov-2019 05:31:25 Asia/Kolkata] PHP Notice:  Undefined index: userId in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 120
+[30-Nov-2019 05:48:47 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '$curl' (T_VARIABLE), expecting ',' or ';' in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 7
+[30-Nov-2019 06:24:26 Asia/Kolkata] PHP Notice:  Undefined variable: temp_order_id in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 162
+[30-Nov-2019 07:26:45 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '$SECRET' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 5
+[30-Nov-2019 07:26:58 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '$SECRET' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/paystack.class.php on line 5
+[28-Jan-2020 13:01:42 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Class 'MyPayPal' not found in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php:212
+Stack trace:
+#0 {main}
+  thrown in /home/n0d9wjl3c2k1/public_html/app-sd/units-sd/start_order_product-sd/ajax.start_order_product-sd.php on line 212
